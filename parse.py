@@ -1,9 +1,8 @@
 from HTMLParser import HTMLParser
 
 
-fileToRead = open('index.html', 'r')
+fileToRead = open('/mindtap-code/ng-ui/src/browsercheck/index.html', 'r')
 fileContent = fileToRead.read()
-
 
 class MyHTMLParser(HTMLParser):
 	fileContentData = ""
@@ -23,7 +22,6 @@ class MyHTMLParser(HTMLParser):
 parser = MyHTMLParser()
 parser.feed(fileContent)
 #print "Hello"
-#print parser.fileContentData
 
 fileToWrite = open('dataFile.txt','w')
 fileToWrite.write(parser.fileContentData)
